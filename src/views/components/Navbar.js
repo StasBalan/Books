@@ -10,21 +10,6 @@ let Navbar = {
                         <li>
                             <a class="navbar__item" href="/#/">Home</a>
                         </li> 
-                        <li>
-                            <a class="navbar__item" href="/#/art">Art</a>
-                        </li>
-                        <li>
-                            <a class="navbar__item" href="/#/fantasy">Fantasy</a>
-                        </li>
-                        <li>
-                            <a class="navbar__item" href="/#/prose">Prose</a>
-                        </li>
-                        <li>
-                            <a class="navbar__item" href="/#/romance">Romance</a>
-                        </li>
-                        <li>
-                            <a class="navbar__item" href="/#/music">Music</a>
-                        </li>
                     </ul>
                 </div>
             </header>     

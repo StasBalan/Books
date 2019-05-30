@@ -1,12 +1,6 @@
-import Utils        from './../../services/Utils.js'
+import Utils        from '../../services/Utils.js'
 
 let getPost = async (id) => {
-    //  const options = {
-    //     method: 'GET',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     }
-    // };
     try {
         const response = await fetch(`http://openlibrary.org/subjects/art.json`)
         const json = await response.json();
@@ -16,23 +10,18 @@ let getPost = async (id) => {
     }
 }
 
-let PostShow = {
+let Books = {
 
     render : async () => {
         let request = Utils.parseRequestURL();
         let post = await getPost(request.id);
-        let arr = post.works;
-        let res = arr.map((el) => {
-            console.log(el.title);
-            return `<li><a>${el.title}</a></li>`
-        }).join('\n ');
+        console.log(post);
+
 
         return /*html*/`
             <section class="section">
                 <h1>123</h1>
-                <ul>
-                    ${res}
-                </ul>
+              
             </section>
         `
     }
@@ -40,4 +29,4 @@ let PostShow = {
     }
 }
 
-export default PostShow;
+export default Books;

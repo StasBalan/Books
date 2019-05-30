@@ -1,12 +1,6 @@
 import Utils        from './../../services/Utils.js'
 
 let getPost = async (id) => {
-   //  const options = {
-   //     method: 'GET',
-   //     headers: {
-   //         'Content-Type': 'application/json'
-   //     }
-   // };
    try {
        const response = await fetch(`http://openlibrary.org/subjects/art.json`)
        const json = await response.json();
@@ -24,7 +18,7 @@ let PostShow = {
         let arr = post.works;
         let res = arr.map((el) => {
                    console.log(el.title);
-                  return `<li><a>${el.title}</a></li>`
+                  return `<li><a href="#/p/${post.ebook_count}/${el.cover_id}">${el.title}</a></li>`
                 }).join('\n ');
         
         return /*html*/`

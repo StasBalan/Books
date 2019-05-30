@@ -1,13 +1,9 @@
 "use strict";
 
 import Home         from './views/pages/Home.js'
-import Art          from './views/pages/Art.js'
-import Fantasy      from './views/pages/Fantasy.js'
-import Prose        from './views/pages/Prose.js'
-import Romance      from './views/pages/Romance.js'
-import Music        from './views/pages/Music.js'
 import Error404     from './views/pages/Error404.js'
 import PostShow     from './views/pages/PostShow.js'
+import Books        from './views/pages/Books.js'
 
 
 import Navbar       from './views/components/Navbar.js'
@@ -19,13 +15,8 @@ import Utils        from './services/Utils.js'
 // List of supported routes. Any url other than these routes will throw a 404 error
 const routes = {
     '/'             : Home
-    , '/art'        : Art
-    , '/fantasy'    : Fantasy
-    , '/prose'      : Prose
-    , '/romance'    : Romance
-    , '/music'      : Music
-    , '/p/:id'      : PostShow
-
+    , '/p/id'       : PostShow
+    , '/book'       : Books
 };
 
 
@@ -42,15 +33,13 @@ const router = async () => {
     await Navbar.after_render();
     footer.innerHTML = await Bottombar.render();
     await Bottombar.after_render();
-    content.innerHTML = await Home.render();
-    await Home.after_render();
 
 
     // Get the parsed URl from the addressbar
     let request = Utils.parseRequestURL();
 
     // Parse the URL and if it has an id part, change it with the string ":id"
-    let parsedURL = (request.resource ? '/' + request.resource : '/') + (request.id ? '/:id' : '') + (request.verb ? '/' + request.verb : '');
+    let parsedURL = (request.resource ? '/' + request.resource : '/') + (request.id ? '/id' : '') + (request.verb ? '/' + request.verb : '');
     
     // Get the page from our hash of supported routes.
     // If the parsed URL is not in our list of supported routes, select the 404 page instead

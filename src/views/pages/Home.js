@@ -3,12 +3,6 @@
 // --------------------------------
 
 let getPostsList = async () => {
-    //  const options = {
-    //     method: 'GET',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     }
-    // };
     try {
         const response = await fetch(`http://openlibrary.org/subjects/art.json`);
         const json = await response.json();
