@@ -1,0 +1,22 @@
+{
+  "name": "books",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "live-server src --verbose",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StasBalan/Books.git"
+  },
+  "author": "Stas Balan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StasBalan/Books/issues"
+  },
+  "homepage": "https://github.com/StasBalan/Books#readme"
+}
+
+
