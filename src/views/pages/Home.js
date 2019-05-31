@@ -1,34 +1,36 @@
 // --------------------------------
 //  Define Data Sources
 // --------------------------------
-
-let getPostsList = async () => {
-    try {
-        const response = await fetch(`http://openlibrary.org/subjects/art.json`);
-        const json = await response.json();
-        return json
-    } catch (err) {
-        console.log('Error getting documents', err)
+const CATEGORY = [
+    {
+        name: 'art'
+    },
+    {
+        name: 'prose'
+    },
+    {
+        name: 'romance'
+    },
+    {
+        name: ''
     }
-};
+];
 
 let Home = {
     render : async () => {
-        let posts = await getPostsList();
-        console.log(posts);
-        let view =  /*html*/`
+        const res = CATEGORY.map((el) => `<li><a href="#/p/${el.name}">${el.name}</a></li>`).join('\n ');
+       return/*html*/`
             <section class="section">
-                <h1> Home </h1>
+                <h1 class="section__title"> Home </h1>
                 <ul>
-                    <li><a href="#/p/${posts.ebook_count}">${posts.name}</a></li>
+                    ${res}
                 </ul>
             </section>
-        `
-        return view
+        `;
     }
     , after_render: async () => {
     }
 
-}
+};
 
 export default Home;

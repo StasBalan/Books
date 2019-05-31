@@ -5,7 +5,6 @@ import Error404     from './views/pages/Error404.js'
 import PostShow     from './views/pages/PostShow.js'
 import Books        from './views/pages/Books.js'
 
-
 import Navbar       from './views/components/Navbar.js'
 import Bottombar    from './views/components/Bottombar.js' 
 
@@ -16,7 +15,7 @@ import Utils        from './services/Utils.js'
 const routes = {
     '/'             : Home
     , '/p/id'       : PostShow
-    , '/book'       : Books
+    , '/b/id'       : Books
 };
 
 

@@ -1,6 +1,6 @@
 let Navbar = {
     render: async () => {
-        let view =  /*html*/`
+        return/*html*/`
             <header class="navbar">
                 <div class="container">
                         <a class="navbar__logo" href="/#/">
@@ -13,11 +13,10 @@ let Navbar = {
                     </ul>
                 </div>
             </header>     
-        `
-        return view
+        `;
     },
     after_render: async () => { }
 
-}
+};
 
 export default Navbar;

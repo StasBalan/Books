@@ -7,11 +7,12 @@ const Utils = {
         let url = location.hash.slice(1).toLowerCase() || '/';
         console.log(url);
         let r = url.split("/");
+        console.log(r);
         let request = {
             resource    : null,
             id          : null,
             verb        : null
-        }
+        };
         request.resource    = r[1];
         request.id          = r[2];
         request.verb        = r[3];
