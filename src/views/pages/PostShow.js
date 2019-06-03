@@ -17,7 +17,10 @@ let PostShow = {
         console.log(post);
         let arr = post.works;
         console.log(arr);
-        let res = arr.map((el) => `<li><a href="#/b/${el.availability.openlibrary_edition}">${el.title}</a></li>`).join('\n ');
+        let res = arr.map((el) =>{
+            if(el.title === `A summer in Skye`) console.log('post map', el);
+            return `<li><a href="#/b/${el.cover_edition_key}">${el.title}</a></li>`
+        }).join('\n ');
         
         return /*html*/`
             <section class="section section-books">

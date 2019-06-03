@@ -15,7 +15,10 @@ const CATEGORY = [
 
 let Home = {
     render : async () => {
-        const res = CATEGORY.map((el) => `<li class="section__item">${el.icon}<a href="#/p/${el.name}">${el.name.toUpperCase()[0] + el.name.slice(1).toLowerCase()}</a></li>`).join('\n ');
+
+        const res = CATEGORY.map((el) => `<li class="section__item">${el.icon}
+                                             <a href="#/p/${el.name}">${el.name.toUpperCase()[0] + el.name.slice(1).toLowerCase()}</a>
+                                           </li>`).join('\n ');
        return/*html*/`
             <section class="section">
                 <h1 class="section__title">Home</h1>

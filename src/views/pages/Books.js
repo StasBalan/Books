@@ -23,7 +23,7 @@ let Books = {
             const authors = obj.authors;
             const resAuthors = authors.map((el) => el.name);
             const subjectPeople = obj.subject_people;
-            const resSubjectPeople = subjectPeople.map((el) => el.name);
+            const resSubjectPeople = subjectPeople ? subjectPeople.map((el) => el.name) : 'no people' ;
             return /*html*/`
             <section class="section">
                 <h1 class="section__title">${obj.title}</h1>
@@ -35,7 +35,6 @@ let Books = {
                         <p>Subject people: ${resSubjectPeople}</p>
                     </div>
                 </div>
-              
             </section>
         `
         }
