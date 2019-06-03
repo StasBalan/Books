@@ -20,9 +20,9 @@ let PostShow = {
         let res = arr.map((el) => `<li><a href="#/b/${el.availability.openlibrary_edition}">${el.title}</a></li>`).join('\n ');
         
         return /*html*/`
-            <section class="section">
+            <section class="section section-books">
                 <h1 class="section__title">Books</h1>
-                <ul>
+                <ul class="section-books__menu">
                     ${res}
                 </ul>
             </section>

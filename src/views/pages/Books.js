@@ -15,14 +15,32 @@ let Books = {
     render : async () => {
         let request = Utils.parseRequestURL();
         let post = await getPost(request.id);
-        console.log(request);
-
-        return /*html*/`
+        console.log(post);
+        for(let key in post) {
+            const obj = post[key];
+            const img = obj.cover.large;
+            const publishDate = obj.publish_date;
+            const authors = obj.authors;
+            const resAuthors = authors.map((el) => el.name);
+            const subjectPeople = obj.subject_people;
+            const resSubjectPeople = subjectPeople.map((el) => el.name);
+            return /*html*/`
             <section class="section">
-                <h1>123</h1>
-                
+                <h1 class="section__title">${obj.title}</h1>
+                <div class="section__box section-box">
+                    <img src="${img}" alt="">
+                    <div class="section-box__inner">
+                        <p>Authors: ${resAuthors}</p>
+                        <p>Publish date: ${publishDate}</p>
+                        <p>Subject people: ${resSubjectPeople}</p>
+                    </div>
+                </div>
+              
             </section>
         `
+        }
+
+
     }
     , after_render: async () => {
     }
