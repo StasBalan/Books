@@ -3,9 +3,10 @@ let Bottombar = {
         let view =  /*html*/`
         <footer class="footer">
             <div class="content has-text-centered">
-                <p>
-                    This is my foot. There are many like it, but this one is mine.
-                </p>
+                <p>@StasBalan</p>
+                <a href="https://github.com/StasBalan?tab=repositories">
+                    https://github.com/StasBalan?tab=repositories
+                </a>
             </div>
         </footer>
         `
